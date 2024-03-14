@@ -1,0 +1,24 @@
+.input {
+    display: inline;
+    font-size: 1rem;
+    margin: 1em;
+    padding: 0.65em 1em;
+    min-width: 20em;
+    border-radius: 1.5em;
+    border: 2px solid hsla(200, 30%, 50%, 1);
+    background-color: hsla(200, 30%, 75%, 1);
+}
+
+button {
+    padding: 4px 20px;
+    border: 1px solid hsla(200, 30%, 75%, 1);
+    border-radius: 7px;
+    background-color: hsla(200, 30%, 55%, 1);
+}
+
+button:hover {
+    color: white;
+    border-color: hsla(200, 30%, 55%, 1);
+    background-color: hsla(200, 30%, 35%, 1);
+    cursor: pointer;
+}

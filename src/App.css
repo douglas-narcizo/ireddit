@@ -1,10 +1,21 @@
 .App {
   text-align: center;
+  color: white;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.App-title {
+  color: hsla(8, 62%, 50%, 1);
+}
+
+.highlight {
+  font-style: italic;
+  margin: 0 5px;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,12 +25,12 @@
 }
 
 .App-header {
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(14px + 4vmin);
 }
 
 .App-link {

@@ -1,0 +1,40 @@
+.feedList {
+    margin: 0 auto;
+    max-width: 50em;
+}
+
+.itemTitle h3 {
+    margin: 0.5em;
+}
+
+.itemAuthorAndSubreddit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 1em;
+    margin: 0.5em 0;
+}
+
+.subreddit {
+    margin: 0;
+    color: hsla(200, 30%, 65%, 1);
+}
+
+.itemContainer {
+    margin: 1em 2em;
+    padding: 1em;
+    border: 1px solid hsla(200, 30%, 50%, 1);
+    border-radius: 0.5em;
+}
+
+.img {
+    width: 95%;
+    max-width: 40em;
+    display: block;
+    margin: 0.5em auto;
+}
+
+span {
+    margin: auto 2em;
+}
