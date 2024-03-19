@@ -1,0 +1,43 @@
+.subredd-list {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid hsla(200, 30%, 50%, 0.5);
+    border-radius: 0.5em;
+    height: fit-content;
+    position: relative;
+    top: 1em;
+}
+
+.subredd-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.subredd-item {
+    display: flex;
+    align-items: center;
+    margin: 0.4em 0;
+    padding: 0.9em 1.25em 0.9em 0.8em;
+    border: 1px solid hsla(200, 30%, 50%, 0.5);
+    border-radius: 0.25em;
+    position: relative;
+    transition: all 0.1s ease-in-out;
+}
+
+.subredd-item:hover {
+    background-color: hsla(200, 30%, 50%, 0.1);
+    border: 1px solid hsla(200, 30%, 75%, 1);
+    cursor: pointer;
+    box-shadow: hsla(200, 30%, 50%, 1) -2px 2px 3px;
+    translate: 1px -1px;
+}
+
+.subredd-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.subredd-icon {
+    width: 25px;
+    margin-right: 0.75em;
+}

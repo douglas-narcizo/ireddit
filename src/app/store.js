@@ -1,12 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { combineReducers } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import feedReducer from '../features/feed/feedSlice';
 import searchReducer from '../features/search/searchSlice';
+import subreddtitsReducer from '../features/subreddits/subredditsSlice';
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
+  reducer: combineReducers({
     feed: feedReducer,
-    search: searchReducer
-  },
+    search: searchReducer,
+    subreddits: subreddtitsReducer
+  })
 });

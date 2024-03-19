@@ -10,6 +10,9 @@
 
 .App-title {
   color: hsla(8, 62%, 50%, 1);
+  font-size: calc(14px + 5vmin);
+  font-weight: 700;
+  float: inline-start;
 }
 
 .highlight {
@@ -25,16 +28,34 @@
 }
 
 .App-header {
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
-  justify-content: center;
-  font-size: calc(14px + 4vmin);
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: hsla(200, 30%, 15%, 1);
+  z-index: 10;
+/*  display: flex;
+/*  font-size: calc(14px + 20vmin); */
+}
+
+.current-thread {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: hsla(200, 30%, 65%, 1);
 }
 
 .App-link {
   color: rgb(112, 76, 182);
+}
+
+.App-body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  position: relative;
+  top: 10vh;
 }
 
 @keyframes App-logo-float {
