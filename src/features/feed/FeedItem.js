@@ -1,5 +1,9 @@
 import React from 'react';
-import styles from './Feed.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
+import { searchSelector, setUrl } from '../search/searchSlice';
+import { arrowUp, arrowDown, kNotation } from '../../common/util';
+import './Feed.css';
 // in the future - import Markdown
 
 export const FeedItem = (props) => {
@@ -13,15 +17,14 @@ export const FeedItem = (props) => {
     ups,
     downs,
     is_video,
+    num_comments,
     upvote_ratio } = props.itemData;
 
-  const kNotation = (num) => {
-    if (num > 999) {
-      return (num / 1000).toFixed(1).toString() + 'k';
-    }
-    return num.toString();
-  }
+  const search = useSelector(searchSelector);
+  const dispatch = useDispatch();
+//  const navigate = useNavigate();
 
+  // Get the URL for the preview image if possible
   const previewUrl = () => {
     if (preview) {
       return preview.images[0].source.url.includes('//external')
@@ -32,18 +35,42 @@ export const FeedItem = (props) => {
     }
   }
 
+  const handleClick = (e, path) => {
+    e.preventDefault();
+    dispatch(setUrl(path));
+//    navigate({ pathname: path });
+  }
+
+  // Ups & Downs badge element
+  const upsDownsBadge = (num) => (
+    <div className='upsDownsBadge' >
+      {arrowUp} {kNotation(num)} {arrowDown}
+    </div>
+  );
+
   return (
-    <div className={styles.itemContainer}>
-      <div className={styles.itemTitle}>
+    <div className='itemContainer'>
+      <div className='itemAuthorAndSubreddit'>
+        <span className='author'
+          onClick={(e) => handleClick(e, `user/${author}`)}
+        >
+          u/{author}
+        </span>
+        <span className='subreddit'
+          onClick={(e) => handleClick(e, subreddit_name_prefixed)}
+        >
+          {subreddit_name_prefixed}
+        </span>
+      </div>
+      <div className='itemTitle'>
+        {upsDownsBadge(ups + downs)}
         {title ? <h3>{title}</h3> : ''}
       </div>
-      <div className={styles.itemAuthorAndSubreddit}>
-        {author}
-        <span className={styles.subreddit}>{subreddit_name_prefixed}</span>
-      </div>
-      {previewUrl() ? <img className={styles.img} src={previewUrl()} alt='' loading='lazy' /> : ''}
+      {previewUrl() ? <img className='img' src={previewUrl()} alt='' loading='lazy' /> : ''}
       {selftext ? <p>{selftext}</p> : ''}
-      ⬆️ {kNotation(ups + downs)} ⬇️  –  {Number(upvote_ratio)*100}%
+      <div className='itemFooter'>
+        Comments: {kNotation(num_comments)}
+      </div>
     </div>
   )
 }

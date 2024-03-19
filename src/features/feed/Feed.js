@@ -7,7 +7,8 @@ import {
   feedFailed,
 } from './feedSlice';
 import { FeedItem } from './FeedItem';
-import styles from './Feed.module.css';
+import { setTerm } from '../search/searchSlice';
+import './Feed.css';
 
 export const Feed = () => {
   const feed = useSelector(selectFeed);
@@ -22,18 +23,28 @@ export const Feed = () => {
 
   const feedList = (feed) => {
     if (isFeedLoaded) {
-      let itemList = feed.data.children.map((item, index) => (
-        <FeedItem
-          key={index}
-          itemData={item.data}
-        />
-      ));
+      let itemList = [];
+      /* CONFIG ANTIGA ------
+        let itemList = feed.data.children.map((item, index) => (
+          <FeedItem key={index} itemData={item.data} />
+        )); */
+      for (const item of feed) {
+        itemList.push(
+          <FeedItem
+            key={item.id}
+            itemData={item}
+          />
+        )
+      }
+      dispatch(setTerm(''));
       return itemList;
+    } else if (!isFeedFailed) {
+      return 'Loading…';
     }
   }
 
   return (
-    <div className={styles.feedList}>
+    <div className='feedList'>
       {feedList(feed)}
       {isFeedFailed ? "Feed failed to load :(" : "" }
     </div>

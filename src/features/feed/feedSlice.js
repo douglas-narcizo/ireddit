@@ -1,4 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { 
+  getFeedPosts,
+  getSearch,
+  getSubreddits,
+  getPostComments } from '../../api/reddit';
 
 const initialState = {
   value: {},
@@ -7,17 +12,17 @@ const initialState = {
 
 export const fetchFeed = createAsyncThunk(
   'feed/fetchFeed',
-  async (endpoint) => {
+  getFeedPosts
+);
+/*  async (endpoint) => {
     const response = await fetch(endpoint);
     const json = await response.json();
     return json;
-  }
-);
+  } */
 
 export const feedSlice = createSlice({
   name: 'feed',
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -30,7 +35,6 @@ export const feedSlice = createSlice({
       .addCase(fetchFeed.fulfilled, (state, action) => {
         state.status = 'loaded';
         state.value = action.payload;
-        console.log(state.status, state.value);
       })
       .addCase(fetchFeed.rejected, (state) => {
         state.status = 'failed';
@@ -38,7 +42,7 @@ export const feedSlice = createSlice({
   },
 });
   
-// export const { named actions } = counterSlice.actions;
+// export const { named actions } = feedSlice.actions;
   
 // Selector
 export const selectFeed = (state) => state.feed.value;

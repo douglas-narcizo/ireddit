@@ -1,12 +1,26 @@
+.searchBar {
+    width: 100%;
+}
+
 .input {
     display: inline;
     font-size: 1rem;
+    color: hsla(200, 30%, 75%, 1);
     margin: 1em;
     padding: 0.65em 1em;
+    width: 75%;
     min-width: 20em;
     border-radius: 1.5em;
-    border: 2px solid hsla(200, 30%, 50%, 1);
-    background-color: hsla(200, 30%, 75%, 1);
+    border: 1px solid hsla(200, 30%, 40%, 1);
+    background-color: hsla(200, 30%, 20%, 1);
+}
+
+.input::placeholder, .input::-ms-input-placeholder {
+    color: hsla(200, 30%, 50%, 1);
+}
+
+.input:focus-visible {
+    outline: 1px solid hsla(200, 30%, 50%, 1);
 }
 
 button {

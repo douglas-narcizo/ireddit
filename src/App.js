@@ -1,66 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+// import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+// import logo from './logo.svg';
+// import Root from './features/root';
 import { Feed } from './features/feed/Feed';
-import { Detail } from './features/detail/Detail';
+import { Subreddits } from './features/subreddits/Subreddits';
+import { Comments } from './features/comments/Comments';
 import { Search } from './features/search/Search';
+import { CurrentThread } from './features/currentThread/CurrentThread';
 import './App.css';
 
+/* const appRouter = createBrowserRouter( createRoutesFromElements(
+  <Route path='/' element={ <Root /> } >
+    <Route index element={ <Feed /> } />
+    <Route path='/search' element={ <Feed /> } />
+    <Route path='/user/:author' element={ <Feed /> } />
+    <Route path='/r/:subreddit' element={ <Feed /> } />
+    <Route path='/comments' element={ <Comments /> } />
+  </Route>
+)); */
+
 function App() {
-  return (
+/*  return (
+    <RouterProvider router={appRouter} />
+  );
+
+/*  return (
     <div className="App">
       <header className="App-header">
         <h2 className="App-title"><span className="highlight">i</span>Reddit</h2>
         <Search />
-        {/*
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-        */}
       </header>
       <div className="App-body">
         <Feed />
-        <Detail />
+        <Comments />
+      </div>
+    </div>
+  ); */
+
+    return (
+      <div className="App">
+      <header className="App-header">
+        <div className="App-title"><span className="highlight">i</span>Reddit</div>
+        <Search />
+        <CurrentThread />
+      </header>
+      <div className="App-body">
+        <Subreddits />
+        <Feed />
       </div>
     </div>
   );
