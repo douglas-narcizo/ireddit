@@ -10,6 +10,5 @@ Feel free to comment or make suggestions. And thanks for visiting!
 _Bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template._
 
 ### To-dos:
-- React Router and implement pages routing
-- Video player implementation
-- Markdown displaying
+- [ ] Video player implementation
+- [x] Markdown displaying

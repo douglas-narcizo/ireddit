@@ -1,0 +1,23 @@
+.comments {
+  margin-top: 1em;
+}
+
+.comment {
+  font-size: 0.9em;
+  border-top: 1px solid hsla(200, 50%, 50%, 0.5);
+}
+
+.comment p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4em;
+}
+
+.comment a {
+  color: inherit;
+}
+
+.comment span {
+  font-size: 0.75em;
+  color: hsla(200, 50%, 75%, 1);
+}

@@ -45,11 +45,11 @@
 .itemContainer {
     margin: 1em 2em;
     padding: 1em;
-    border: 1px solid hsla(200, 30%, 50%, 1);
+    border: 1px solid hsla(200, 30%, 50%, 0.5);
     border-radius: 0.5em;
 }
 
-.img {
+.img, .video-player {
     max-width: 90%;
     max-height: 75vh;
     object-fit: contain;
@@ -61,7 +61,16 @@ span {
     margin: auto 2em;
 }
 
-.itemFooter {
-    margin: 1em 0 0.25em 0;
+.comment-count {
+    margin-top: 1em;
+    padding: 0.25em 1.25em;
+    width: fit-content;
     text-align: left;
+    border: 1px solid hsla(200, 30%, 50%, 0.25);
+    border-radius: 5px;
+}
+
+.comment-count:hover {
+    border: 1px solid hsla(200, 30%, 50%, 1);
+    cursor: pointer;
 }
