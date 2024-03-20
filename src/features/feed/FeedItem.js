@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
 import { searchSelector, setUrl } from '../search/searchSlice';
+import { selectPostComments, toggleShowing, commentsLoaded, commentsFailed } from '../comments/commentsSlice';
+import { Comments } from '../comments/Comments';
 import { arrowUp, arrowDown, kNotation } from '../../common/util';
+import ReactMarkdown from 'react-markdown';
 import './Feed.css';
-// in the future - import Markdown
 
 export const FeedItem = (props) => {
   const {
+    id,
     title,
     author,
     preview,
@@ -17,12 +19,13 @@ export const FeedItem = (props) => {
     ups,
     downs,
     is_video,
+    media,
     num_comments,
+    permalink,
     upvote_ratio } = props.itemData;
 
   const search = useSelector(searchSelector);
   const dispatch = useDispatch();
-//  const navigate = useNavigate();
 
   // Get the URL for the preview image if possible
   const previewUrl = () => {
@@ -38,7 +41,6 @@ export const FeedItem = (props) => {
   const handleClick = (e, path) => {
     e.preventDefault();
     dispatch(setUrl(path));
-//    navigate({ pathname: path });
   }
 
   // Ups & Downs badge element
@@ -47,6 +49,23 @@ export const FeedItem = (props) => {
       {arrowUp} {kNotation(num)} {arrowDown}
     </div>
   );
+
+  // Video Player element - (type="video/mp4")
+  const videoPlayer = (media) => {
+    const {
+      scrubber_media_url,
+      fallback_url,
+      dash_url,
+      hls_url,
+      has_audio,
+      height,
+      width, } = media;
+    return (
+      <video className='video-player' width={width} height={height} controls >
+        <source src={dash_url || scrubber_media_url || fallback_url} />
+        Video unavailable
+      </video>
+  )};
 
   return (
     <div className='itemContainer'>
@@ -67,10 +86,14 @@ export const FeedItem = (props) => {
         {title ? <h3>{title}</h3> : ''}
       </div>
       {previewUrl() ? <img className='img' src={previewUrl()} alt='' loading='lazy' /> : ''}
-      {selftext ? <p>{selftext}</p> : ''}
-      <div className='itemFooter'>
+      {is_video ? videoPlayer(media.reddit_video) : ''}
+      {selftext ? <ReactMarkdown>{selftext}</ReactMarkdown> : ''}
+      <div className='comment-count' 
+        onClick={() => dispatch(toggleShowing(id))}
+      >
         Comments: {kNotation(num_comments)}
       </div>
+      <Comments id={id} permalink={permalink} />
     </div>
   )
 }

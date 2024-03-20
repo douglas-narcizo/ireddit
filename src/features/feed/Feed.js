@@ -25,9 +25,9 @@ export const Feed = () => {
     if (isFeedLoaded) {
       let itemList = [];
       /* CONFIG ANTIGA ------
-        let itemList = feed.data.children.map((item, index) => (
-          <FeedItem key={index} itemData={item.data} />
-        )); */
+      let itemList = feed.data.children.map((item, index) => (
+        <FeedItem key={index} itemData={item.data} />
+      )); */
       for (const item of feed) {
         itemList.push(
           <FeedItem
