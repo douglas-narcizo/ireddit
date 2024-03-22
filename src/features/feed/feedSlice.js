@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { 
-  getFeedPosts,
-  getPostComments } from '../../api/reddit';
+import { getFeedPosts } from '../../api/reddit';
 
 const initialState = {
   value: {},
@@ -26,7 +24,6 @@ export const feedSlice = createSlice({
       .addCase(fetchFeed.fulfilled, (state, action) => {
         state.status = 'loaded';
         state.value = action.payload;
-        console.log(action.payload);   // DELETE THIS LATER ON!!
       })
       .addCase(fetchFeed.rejected, (state) => {
         state.status = 'failed';

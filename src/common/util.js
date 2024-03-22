@@ -1,5 +1,3 @@
-import React from "react";
-
 /* UTILITY --- Convert Number to 'K' notation String
 export const kNotation = (num) => {
   if (num > 999) {

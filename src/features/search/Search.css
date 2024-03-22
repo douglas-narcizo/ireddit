@@ -26,7 +26,7 @@ button {
     padding: 4px 20px;
     border: 1px solid hsla(200, 30%, 75%, 1);
     border-radius: 7px;
-    background-color: hsla(200, 30%, 55%, 1);
+    background-color: hsla(200, 30%, 50%, 1);
 }
 
 button:hover {
@@ -42,6 +42,11 @@ button:hover {
     .input {
         width: 65%;
         padding: 0.4em 0.75em;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 12px;
     }
 }
 
@@ -50,10 +55,12 @@ button:hover {
 @media only screen and (max-width: 470px) {
     .input {
         width: 55%;
+        font-size: 12px;
     }
 
     button {
         padding: 4px 15px;
+        font-size: 11px;
     }
 }
  

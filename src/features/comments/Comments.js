@@ -13,7 +13,7 @@ import {
   commentsFailed
 } from './commentsSlice';
 import './Comments.css';
-import '../../common/github-markdown.css';
+// import '../../common/github-markdown.css';
 
 export const Comments = (props) => {
   const postComments = useSelector(selectPostComments);
@@ -35,7 +35,6 @@ export const Comments = (props) => {
     if (postId !== id) {
       return;
     }
-    console.log(`Buscou comentários para o id '${id}'`);
     dispatch(fetchPostComments(props.permalink));
   }  
 
@@ -58,7 +57,7 @@ export const Comments = (props) => {
             </div>
             <div className='ups-downs-badge' >{arrowUp} {shortenNumber(comment.ups+comment.downs, 1)} {arrowDown}</div>
           </div>
-          <ReactMarkdown key={comment.id}>{comment.body}</ReactMarkdown>
+          <ReactMarkdown key={comment.id} className='markdown-body'>{comment.body}</ReactMarkdown>
         </div>
       ));
     } else if (commentsAreFailed) {
