@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { 
-  fetchFeed,
   selectFeed,
   feedLoaded,
   feedFailed,
@@ -16,18 +15,9 @@ export const Feed = () => {
   const isFeedFailed = useSelector(feedFailed);
   const dispatch = useDispatch();
 
-/*  useEffect(() => {
-    dispatch(fetchFeed('https://www.reddit.com/r/popular.json'));
-  }, [dispatch]);
-*/
-
   const feedList = (feed) => {
     if (isFeedLoaded) {
       let itemList = [];
-      /* CONFIG ANTIGA ------
-      let itemList = feed.data.children.map((item, index) => (
-        <FeedItem key={index} itemData={item.data} />
-      )); */
       for (const item of feed) {
         itemList.push(
           <FeedItem

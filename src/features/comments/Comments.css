@@ -4,20 +4,60 @@
 
 .comment {
   font-size: 0.9em;
+  text-align: start;
   border-top: 1px solid hsla(200, 50%, 50%, 0.5);
+  transition: max-height 2.5s ease-in-out;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1em 0.5em;
 }
 
 .comment p {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.4em;
+  margin: 0.75em;
 }
 
 .comment a {
   color: inherit;
 }
 
-.comment span {
-  font-size: 0.75em;
+.comment-author {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-weight: 600;
+}
+
+.comment-date {
+  font-size: 0.85em;
+  color: hsla(200, 50%, 55%, 1);
+  margin: 0 0.6em;
+}
+
+.ups-downs-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 1em;
   color: hsla(200, 50%, 75%, 1);
+}
+
+.comment .markdown-body {
+  overflow: scroll;
+}
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+  .comments {
+    max-width: 85vw;
+    margin: 1em auto;
+  }
+  .comment p {
+    margin: 0.75em 0;
+  }
 }

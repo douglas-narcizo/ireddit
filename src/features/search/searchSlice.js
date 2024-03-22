@@ -1,13 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getSearch } from '../../api/reddit';
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- 
-//
-// THIS SLICE WILL PROBABLY BE REMOVED ON NEXT REVISION!!
-//
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- 
-
-const initialState = {
+  const initialState = {
     term: '',
     url: ''
   };
@@ -43,6 +37,11 @@ const initialState = {
       },
 });
 
+// SELECTORS export -----
 export const searchSelector = (state) => state.search;
+
+// ACTIONS export -----
 export const { setTerm, setUrl } = searchSlice.actions;
+
+// REDUCER export -----
 export default searchSlice.reducer;

@@ -21,8 +21,10 @@ export const commentsSlice = createSlice({
       if (state.postId !== action.payload) {
         state.status = 'idle';
         state.postId = action.payload;
+        state.showing = true;
+      } else {
+        state.showing = !state.showing;
       }
-      state.showing = !state.showing;
     },
   },
   extraReducers: (builder) => {
@@ -33,7 +35,7 @@ export const commentsSlice = createSlice({
       .addCase(fetchPostComments.fulfilled, (state, action) => {
         state.status = 'loaded';
         state.value = action.payload;
-        console.log(state.value);  // REMOVE THIS LATER ON !!!
+//        console.log(state.value);  // REMOVE THIS LATER ON !!!
       })
       .addCase(fetchPostComments.rejected, (state) => {
         state.status = 'failed';

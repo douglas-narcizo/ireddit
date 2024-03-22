@@ -9,7 +9,6 @@
     margin: 1em;
     padding: 0.65em 1em;
     width: 75%;
-    min-width: 20em;
     border-radius: 1.5em;
     border: 1px solid hsla(200, 30%, 40%, 1);
     background-color: hsla(200, 30%, 20%, 1);
@@ -36,3 +35,25 @@ button:hover {
     background-color: hsla(200, 30%, 35%, 1);
     cursor: pointer;
 }
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+    .input {
+        width: 65%;
+        padding: 0.4em 0.75em;
+    }
+}
+
+/* ----- MOBILE QUERY ----- */
+
+@media only screen and (max-width: 470px) {
+    .input {
+        width: 55%;
+    }
+
+    button {
+        padding: 4px 15px;
+    }
+}
+ 

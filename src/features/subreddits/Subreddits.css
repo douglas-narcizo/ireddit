@@ -1,12 +1,16 @@
 .subredd-list {
-/*    display: inline-block; */
+    position: sticky;
+    top: calc(10vh + 1em);
     padding: 1em;
     border: 1px solid hsla(200, 30%, 50%, 0.5);
     border-radius: 0.5em;
-    height: fit-content;
-    position: relative;
-    top: 1em;
+    height: 83vh;
     overflow: scroll;
+    background-color: hsla(200, 0%, 0%, 0.15);
+}
+
+.subredd-list h3 {
+    margin: 0.5em;
 }
 
 .subredd-list ul {
@@ -21,7 +25,9 @@
     padding: 0.9em 1.25em 0.9em 0.8em;
     border: 1px solid hsla(200, 30%, 50%, 0.5);
     border-radius: 0.25em;
+    overflow: hidden;
     color: hsla(200, 30%, 85%, 1);
+    background-color: hsla(200, 30%, 15%, 1);
     position: relative;
     transition: all 0.2s ease-in-out;
 }
@@ -44,3 +50,31 @@
     width: 25px;
     margin-right: 0.75em;
 }
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+    .subredd-list {
+      padding: 0.4em;
+    }
+
+    .subredd-item {
+        padding: 0.65em 1.25em 0.65em 0.3em;
+        font-stretch: condensed;
+      /* margin-right: 0.4em; */
+    }
+
+    .subredd-icon {
+        width: 23px;
+        margin-right: 0.5em;
+    }
+  }
+  
+/* ----- MOBILE QUERY ----- */
+
+@media only screen and (max-width: 470px) {
+    .subredd-list {
+        display: none;
+      }
+  }
+  

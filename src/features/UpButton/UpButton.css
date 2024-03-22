@@ -1,0 +1,16 @@
+.nav-arrow-up {
+    position: fixed;
+    right: 3em;
+    bottom: 3em;
+    margin: 0;
+    padding: 1.1em;
+    border: none;
+    border-radius: 3em;
+    color: hsla(200, 50%, 75%, 1);
+    background-color: hsla(200, 30%, 30%, 0.75);
+    transition: 0.15s;
+}
+
+.nav-arrow-up:hover {
+    transform: translateY(-16px) scale(1.05);
+}

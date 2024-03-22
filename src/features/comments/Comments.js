@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
+import { fromNow } from '../../common/fromNow/from-now';
+import { shortenNumber } from '../../common/util';
+import { arrowUp, arrowDown } from '../../common/assets';
 import { 
   fetchPostComments,
   selectPostComments,
@@ -10,6 +13,7 @@ import {
   commentsFailed
 } from './commentsSlice';
 import './Comments.css';
+import '../../common/github-markdown.css';
 
 export const Comments = (props) => {
   const postComments = useSelector(selectPostComments);
@@ -26,7 +30,6 @@ export const Comments = (props) => {
       return;
     }
     if (commentsAreLoaded) {
-//      console.log(`Nem - postId=${postId} - id=${id}`);
       return;
     }
     if (postId !== id) {
@@ -38,14 +41,24 @@ export const Comments = (props) => {
 
   useEffect(() => {
     getCommentsFor(props.id)
-  },[showComments]);
+  },[showComments, postId]);
+
+  const relativeTime = (utc) => {
+    const date = new Date(utc*1000);
+    return utc ? '• ' + fromNow(date) : null;
+  }
 
   const commentList = (comments) => {
     if (commentsAreLoaded) {
       return comments.map(comment => (
         <div className='comment' key={comment.id}>
-          <p>{comment.author}<span>{Date(comment.created_utc)}</span></p>
-          <ReactMarkdown>{comment.body}</ReactMarkdown>
+          <div className='comment-header' >
+            <div className='comment-author' >{comment.author}
+              <div className='comment-date' >{relativeTime(comment.created_utc)}</div>
+            </div>
+            <div className='ups-downs-badge' >{arrowUp} {shortenNumber(comment.ups+comment.downs, 1)} {arrowDown}</div>
+          </div>
+          <ReactMarkdown key={comment.id}>{comment.body}</ReactMarkdown>
         </div>
       ));
     } else if (commentsAreFailed) {
@@ -56,8 +69,8 @@ export const Comments = (props) => {
   };
 
   return (
-    <div className='comments'>
-      {showCommentsForThisPost ? commentList(postComments) : ''}
+    <div className='comments' >
+      {showCommentsForThisPost ? commentList(postComments) : null}
     </div>
   )
 }

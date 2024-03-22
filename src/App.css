@@ -3,22 +3,31 @@
   color: white;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+.alien-logo {
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  position: relative;
+  top: 2px;
 }
 
 .App-title {
   color: hsla(8, 62%, 50%, 1);
-  font-size: calc(14px + 5vmin);
+  font-size: calc(14px + 3.5vmin);
   font-weight: 700;
-  float: inline-start;
 }
 
 .highlight {
   font-style: italic;
-  margin: 0 5px;
+  margin: 0 3px;
   color: white;
+  font-size: 90%;
+  position: relative;
+  bottom: 1px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -69,3 +78,43 @@
     transform: translateY(0px);
   }
 } */
+
+/* ----- 1024 width QUERY ----- */
+
+@media only screen and (max-width: 1024px) {
+  .App-title {
+    font-size: 2.2em;
+  }
+}
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+  .App {
+    font-size: 14px;
+  }
+
+  .App-header, .App-body {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .current-thread {
+    display: none;
+  }
+}
+
+/* ----- MOBILE QUERY ----- */
+
+@media only screen and (max-width: 470px) {
+  .App {
+    font-size: 12px;
+  }
+  
+  .App-header, .App-body {
+    grid-template-columns: 1fr;
+  }
+
+  .App-body {
+    top: calc(10vh + 2em);
+  }
+}

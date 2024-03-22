@@ -10,11 +10,6 @@ export const fetchSubreddit = createAsyncThunk(
   'subreddits/fetchSubreddit',
   getSubreddits
 );
-/*  async (endpoint) => {
-    const response = await fetch(endpoint);
-    const json = await response.json();
-    return json;
-  } */
 
 export const subredditsSlice = createSlice({
   name: 'subreddits',
@@ -35,12 +30,11 @@ export const subredditsSlice = createSlice({
       });
   },
 });
-  
-// export const { named actions } = feedSlice.actions;
-  
-// Selector
+
+// SELECTORS export -----
 export const selectSubreddits = (state) => state.subreddits.value;
 export const subredditsLoaded = (state) => state.subreddits.status === 'loaded';
 export const subredditsFailed = (state) => state.subreddits.status === 'failed';
 
+// REDUCER export -----
 export default subredditsSlice.reducer;
