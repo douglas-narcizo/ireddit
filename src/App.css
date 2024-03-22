@@ -1,3 +1,5 @@
+@import url(https://github.com/sindresorhus/github-markdown-css/raw/main/github-markdown.css);
+
 .App {
   text-align: center;
   color: white;
@@ -16,18 +18,20 @@
 }
 
 .App-title {
-  color: hsla(8, 62%, 50%, 1);
-  font-size: calc(14px + 3.5vmin);
+  color: hsla(1, 68%, 55%, 1);
+  font-size: calc(16px + 3.5vmin);
   font-weight: 700;
 }
 
 .highlight {
   font-style: italic;
-  margin: 0 3px;
+  margin: 0;
+  letter-spacing: 4px;
   color: white;
-  font-size: 90%;
+  font-size: 75%;
   position: relative;
-  bottom: 1px;
+  bottom: 2px;
+  left: 4px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -112,6 +116,10 @@
   
   .App-header, .App-body {
     grid-template-columns: 1fr;
+  }
+
+  .App-title {
+    margin-top: 0.5em;
   }
 
   .App-body {

@@ -7,8 +7,8 @@ import './Search.css';
 export const Search = () => {
   const search = useSelector(searchSelector);
   const dispatch = useDispatch();
-  const currentUrl = window.location.pathname;
-  const redditUrl = 'https://www.reddit.com';
+//  const currentUrl = window.location.pathname;
+//  const redditUrl = 'https://www.reddit.com';
   let path, query;
 
   useEffect(() => {

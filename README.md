@@ -9,12 +9,8 @@ A lightweight application designed to explore the most trendig topics and articl
 ---
 _Bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template._
 
-<div style="text-align: center;">
-
 ![Static Badge](https://img.shields.io/badge/React-v._18-blue?style=plastic) 
 ![Static Badge](https://img.shields.io/badge/Redux-v._8-764ABC?style=plastic)
-
-</div>
 
 ### To-dos:
 - Voting functionality

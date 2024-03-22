@@ -7,15 +7,15 @@ import { CurrentThread } from './features/currentThread/CurrentThread';
 import { UpButton } from './features/UpButton/UpButton';
 import { FaRedditAlien } from "react-icons/fa6";
 import './App.css';
-import './google-fonts.css';
+import './common/google-fonts.css';
 
 function App() {
     return (
       <div className="App">
       <header className="App-header">
-        <div className="App-title rowdies-light">
+        <div className="App-title grandstander-logo">
           <FaRedditAlien className='alien-logo' />
-          <span className="highlight lobster-regular">i</span>
+          <span className="highlight lobster-regular">i-</span>
           Reddit
         </div>
         <Search />

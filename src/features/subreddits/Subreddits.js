@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
   selectSubreddits,
@@ -13,16 +13,6 @@ export const Subreddits = () => {
   const allSubreddits = useSelector(selectSubreddits);
   const isSubreddLoaded = useSelector(subredditsLoaded);
   const isSubreddFailed = useSelector(subredditsFailed);
-
-  const populateList = () => {
-    let navList = [];
-    for (let i = 1; i <= 15; i++) {
-      navList.push(
-        <li key={'nav'+i} className='subredd-item'>Subreddit {i}</li>
-      );
-    }
-    return navList;
-  }
 
   useEffect(() => {
     dispatch(fetchSubreddit());

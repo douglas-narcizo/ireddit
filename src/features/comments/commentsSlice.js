@@ -35,7 +35,6 @@ export const commentsSlice = createSlice({
       .addCase(fetchPostComments.fulfilled, (state, action) => {
         state.status = 'loaded';
         state.value = action.payload;
-//        console.log(state.value);  // REMOVE THIS LATER ON !!!
       })
       .addCase(fetchPostComments.rejected, (state) => {
         state.status = 'failed';
