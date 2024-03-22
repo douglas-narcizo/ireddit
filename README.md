@@ -1,14 +1,22 @@
 # iReddit
 
-This app is the result of a Portfolio Project as part of Codecademy's **Full Stack Engineer Path**.
+A lightweight application designed to explore the most trendig topics and articles over the _Reddit_ content network, with a cleaner, straight to the point approach, to provide a distraction-free experience to the reader.
 
-Feel free to comment or make suggestions. And thanks for visiting!
+>This app is the result of a Portfolio Project as part of Codecademy's **Full Stack Engineer Path**.
+>
+>Feel free to comment or make suggestions. And thanks for visiting!
 
 ---
-
-
 _Bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template._
 
+<div style="text-align: center;">
+
+![Static Badge](https://img.shields.io/badge/React-v._18-blue?style=plastic) 
+![Static Badge](https://img.shields.io/badge/Redux-v._8-764ABC?style=plastic)
+
+</div>
+
 ### To-dos:
-- [ ] Video player implementation
-- [x] Markdown displaying
+- Voting functionality
+- Loading 'skeleton' animation for loading state
+- Testing suite

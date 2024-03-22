@@ -12,11 +12,6 @@ export const fetchFeed = createAsyncThunk(
   'feed/fetchFeed',
   getFeedPosts
 );
-/*  async (endpoint) => {
-    const response = await fetch(endpoint);
-    const json = await response.json();
-    return json;
-  } */
 
 export const feedSlice = createSlice({
   name: 'feed',
@@ -38,12 +33,11 @@ export const feedSlice = createSlice({
       });
   },
 });
-  
-// export const { named actions } = feedSlice.actions;
-  
-// Selector
+
+// SELECTORS export -----
 export const selectFeed = (state) => state.feed.value;
 export const feedLoaded = (state) => state.feed.status === 'loaded';
 export const feedFailed = (state) => state.feed.status === 'failed';
 
+// REDUCER export -----
 export default feedSlice.reducer;

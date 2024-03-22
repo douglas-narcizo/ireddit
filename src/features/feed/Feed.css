@@ -47,6 +47,7 @@
     padding: 1em;
     border: 1px solid hsla(200, 30%, 50%, 0.5);
     border-radius: 0.5em;
+    background-color: hsla(200, 0%, 0%, 0.15);
 }
 
 .img, .video-player {
@@ -55,6 +56,7 @@
     object-fit: contain;
     display: block;
     margin: 0.5em auto;
+    background-color: hsla(200, 0%, 0%, 0.5);
 }
 
 span {
@@ -73,4 +75,22 @@ span {
 .comment-count:hover {
     border: 1px solid hsla(200, 30%, 50%, 1);
     cursor: pointer;
+}
+
+.showing-comments {
+    font-weight: 700;
+    background-color: hsla(60, 60%, 70%, 0.25);
+}
+
+.markdown-body {
+    text-align: left;
+    margin: 1em 0.5em;
+}
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+    .itemContainer {
+      margin: 1em;
+    }
 }
