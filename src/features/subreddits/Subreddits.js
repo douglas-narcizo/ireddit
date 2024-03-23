@@ -4,6 +4,7 @@ import {
   selectSubreddits,
   subredditsLoaded,
   subredditsFailed,
+  hideSubreddits,
   fetchSubreddit } from './subredditsSlice';
 import { SubredditCard } from './SubredditCard';
 import  './Subreddits.css';
@@ -13,6 +14,7 @@ export const Subreddits = () => {
   const allSubreddits = useSelector(selectSubreddits);
   const isSubreddLoaded = useSelector(subredditsLoaded);
   const isSubreddFailed = useSelector(subredditsFailed);
+  const hidingSubreddits = useSelector(hideSubreddits);
 
   useEffect(() => {
     dispatch(fetchSubreddit());
@@ -30,7 +32,7 @@ export const Subreddits = () => {
   }
 
   return (
-    <aside className='subredd-list'>
+    <aside className={`subredd-list${hidingSubreddits ? '' : ' opened'}`}>
       <h3>Subreddits</h3>
       <ul>
         {subreddList(allSubreddits)}

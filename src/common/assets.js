@@ -21,3 +21,8 @@ export const navArrowUp = (<svg xmlns="http://www.w3.org/2000/svg" fill="current
   12.913 12.914 31.565t-12.914 32.326q-13.674 13.674-32.445 13.674-18.772 0-32.446-13.674L525.5-633.848v436.478q0 19.153-13.174
   32.327T480-151.869q-19.152 0-32.326-13.174T434.5-197.37v-436.478Z"/>
 </svg>)
+
+// ASSET --- Google Menu icon (for navigation)
+export const menuIcon = (<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 -960 960 960" width="24">
+  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+</svg>)

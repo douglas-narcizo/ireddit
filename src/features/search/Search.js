@@ -7,12 +7,10 @@ import './Search.css';
 export const Search = () => {
   const search = useSelector(searchSelector);
   const dispatch = useDispatch();
-//  const currentUrl = window.location.pathname;
-//  const redditUrl = 'https://www.reddit.com';
   let path, query;
 
   useEffect(() => {
-    dispatch(fetchFeed(search.url ? search.url : 'r/popular'));
+    dispatch(fetchFeed(search.url ? search.url : 'r/pics'));
   },[search.url]);
 
   const getFeed = () => {
@@ -20,7 +18,10 @@ export const Search = () => {
       path = '/search';
       query = `?q=${search.term.replaceAll(' ', '%20').toLowerCase()}`;
       dispatch(setUrl(`${path}.json${query}`));
-    }  }
+    } else {
+      dispatch(setUrl('r/pics'));
+    }
+  }
 
   return (
     <div className='searchBar'>

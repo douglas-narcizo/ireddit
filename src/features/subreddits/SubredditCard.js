@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { toggleHiding } from "./subredditsSlice";
 import { setUrl } from "../search/searchSlice";
 
 // https://api.dicebear.com/8.x/pixel-art/svg?seed=${display_name}
@@ -10,7 +11,12 @@ export const SubredditCard = (props) => {
   const dispatch = useDispatch();
 
   return (
-  <div className='subredd-item' onClick={() => dispatch(setUrl(display_name_prefixed))} >
+  <div className='subredd-item'
+    onClick={() => {
+      dispatch(toggleHiding());
+      dispatch(setUrl(display_name_prefixed));
+    }} 
+    >
     <img src={
         icon_img ||
         `https://api.dicebear.com/8.x/pixel-art/svg?seed=${display_name}`
