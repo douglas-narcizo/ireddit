@@ -3,7 +3,8 @@ import { getSubreddits } from '../../api/reddit';
 
 const initialState = {
   value: {},
-  status: 'idle'
+  status: 'idle',
+  hidden: window.innerWidth <= 470
 };
 
 export const fetchSubreddit = createAsyncThunk(
@@ -15,6 +16,9 @@ export const subredditsSlice = createSlice({
   name: 'subreddits',
   initialState,
   reducers: {
+    toggleHiding(state) {
+      state.hidden = !state.hidden;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -35,6 +39,10 @@ export const subredditsSlice = createSlice({
 export const selectSubreddits = (state) => state.subreddits.value;
 export const subredditsLoaded = (state) => state.subreddits.status === 'loaded';
 export const subredditsFailed = (state) => state.subreddits.status === 'failed';
+export const hideSubreddits = (state) => state.subreddits.hidden;
+
+// ACTIONS export -----
+export const { toggleHiding } = subredditsSlice.actions;
 
 // REDUCER export -----
 export default subredditsSlice.reducer;

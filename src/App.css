@@ -5,11 +5,6 @@
   color: white;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
 .alien-logo {
   margin-right: 0.4em;
   font-size: 0.8em;
@@ -33,12 +28,6 @@
   bottom: 2px;
   left: 4px;
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-} */
 
 .App-header {
   min-height: 10vh;
@@ -64,24 +53,22 @@
   color: rgb(112, 76, 182);
 }
 
-.App-body {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+.App-body, .App-footer {  
   position: relative;
   top: 10vh;
 }
 
-/* @keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-} */
+.App-body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.App-footer {
+  margin-top: 1em;
+  padding: 2.5em;
+  background-color: hsla(200, 30%, 10%, 1);
+  border-top: 1px solid hsla(200, 30%, 50%, 0.5);
+}
 
 /* ----- 1024 width QUERY ----- */
 
@@ -124,6 +111,15 @@
   }
 
   .App-body {
-    top: calc(10vh + 2em);
+    top: calc(10vh + 1.1em);
+  }
+
+  .App-footer {
+    text-align: left;
+    padding: 1.4em 0.5em;
+  }
+
+  .App-footer .highlight {
+    letter-spacing: 1px;
   }
 }

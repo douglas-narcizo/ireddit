@@ -6,7 +6,7 @@
     border-radius: 0.5em;
     height: 83vh;
     overflow: scroll;
-    background-color: hsla(200, 0%, 0%, 0.15);
+    background-color: hsla(200, 30%, 12%, 1);
 }
 
 .subredd-list h3 {
@@ -56,6 +56,7 @@
 @media only screen and (max-width: 768px) {
     .subredd-list {
       padding: 0.4em;
+      padding-bottom: 0;
     }
 
     .subredd-item {
@@ -74,7 +75,17 @@
 
 @media only screen and (max-width: 470px) {
     .subredd-list {
-        display: none;
-      }
-  }
+        position: fixed;
+        width: 50vw;
+        height: 87vh;
+        transform: translate(-55vw);
+        transition: transform .25s cubic-bezier(0.4,0.0,0.2,1),visibility 0s linear 0s;
+        visibility: hidden;
+        z-index: 15
+    }
+    .subredd-list.opened {
+        transform: translate(0);
+        visibility: visible;
+    }
+}
   
