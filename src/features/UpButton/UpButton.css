@@ -6,8 +6,8 @@
     padding: 1.1em;
     border: none;
     border-radius: 3em;
-    color: hsla(200, 50%, 75%, 1);
-    background-color: hsla(200, 30%, 30%, 0.75);
+    color: hsla(205, 50%, 75%, 1);
+    background-color: hsla(205, 30%, 30%, 0.75);
     transition: 0.15s;
     z-index: 50;
 }

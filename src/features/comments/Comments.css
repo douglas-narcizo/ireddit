@@ -5,7 +5,7 @@
 .comment {
   font-size: 0.9em;
   text-align: start;
-  border-top: 1px solid hsla(200, 50%, 50%, 0.5);
+  border-top: 1px solid hsla(205, 50%, 50%, 0.5);
   transition: max-height 2.5s ease-in-out;
 }
 
@@ -32,9 +32,9 @@
   font-weight: 600;
 }
 
-.comment-date {
+.relative-time {
   font-size: 0.85em;
-  color: hsla(200, 50%, 55%, 1);
+  color: hsla(205, 50%, 55%, 1);
   margin: 0 0.6em;
 }
 
@@ -43,7 +43,7 @@
   align-items: center;
   gap: 0.5em;
   margin: 0 1em;
-  color: hsla(200, 50%, 75%, 1);
+  color: hsla(205, 50%, 75%, 1);
 }
 
 .comment .markdown-body {

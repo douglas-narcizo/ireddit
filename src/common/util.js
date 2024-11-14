@@ -1,11 +1,4 @@
-/* UTILITY --- Convert Number to 'K' notation String
-export const kNotation = (num) => {
-  if (num > 999) {
-    return (num / 1000).toFixed(1).toString() + 'k';
-  }
-  return num.toString();
-}
-*/
+import { fromNow } from "./fromNow/from-now";
 
 // Shorten number to thousands, millions, billions, etc.
 // Source: https://stackoverflow.com/questions/9461621/format-a-number-as-2-5k-if-a-thousand-or-more-otherwise-900
@@ -25,3 +18,9 @@ export const shortenNumber = (num, digits) => {
 
   return num;
 };
+
+
+export const relativeTime = (utc) => {
+  const date = new Date(utc*1000);
+  return utc ? '• ' + fromNow(date) : null;
+}
