@@ -6,12 +6,11 @@ import {
   selectPostId,
   showPostComments, } from '../comments/commentsSlice';
 import { Comments } from '../comments/Comments';
-import { shortenNumber } from '../../common/util';
+import { relativeTime, shortenNumber } from '../../common/util';
 import { arrowUp, arrowDown } from '../../common/assets';
 import ReactMarkdown from 'react-markdown';
 import ReactHlsPlayer from 'react-hls-player';
 import './Feed.css';
-// import '../../common/github-markdown.css';
 
 export const FeedItem = (props) => {
   const {
@@ -21,6 +20,7 @@ export const FeedItem = (props) => {
     preview,
     subreddit_name_prefixed,
     selftext,
+    created_utc,
     ups,
     downs,
     is_video,
@@ -28,7 +28,6 @@ export const FeedItem = (props) => {
     num_comments,
     permalink, } = props.itemData;
 
-//  const search = useSelector(searchSelector);
   const showingCommentsId = useSelector(selectPostId);
   const showCommentsEnabled = useSelector(showPostComments);
   const dispatch = useDispatch();
@@ -62,9 +61,7 @@ export const FeedItem = (props) => {
     const {
       scrubber_media_url,
       fallback_url,
-//      dash_url,
       hls_url,
-//      has_audio,
       height,
       width, } = media;
     return (
@@ -83,6 +80,7 @@ export const FeedItem = (props) => {
           onClick={(e) => handleClick(e, `user/${author}`)}
         >
           u/{author}
+          <span className='relative-time created-at'>{relativeTime(created_utc)}</span>
         </span>
         <span className='subreddit'
           onClick={(e) => handleClick(e, subreddit_name_prefixed)}

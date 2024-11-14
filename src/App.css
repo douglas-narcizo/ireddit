@@ -6,16 +6,17 @@
 }
 
 .alien-logo {
-  margin-right: 0.4em;
-  font-size: 0.8em;
+  margin-right: 0.2em;
+  width: 1em;
   position: relative;
-  top: 2px;
+  top: 0.12em;
 }
 
 .App-title {
   color: hsla(1, 68%, 55%, 1);
-  font-size: calc(16px + 3.5vmin);
+  font-size: calc(2px + 3vw);
   font-weight: 700;
+  min-width: 6em;
 }
 
 .highlight {
@@ -37,16 +38,15 @@
   position: fixed;
   left: 0;
   width: 100%;
-  background-color: hsla(200, 30%, 15%, 1);
+  background-color: hsla(205, 30%, 15%, 1);
   z-index: 10;
-  border-bottom: 1px solid hsla(200, 30%, 50%, 0.5);
-/*  font-size: calc(14px + 20vmin); */
+  border-bottom: 1px solid hsla(205, 30%, 50%, 0.5);
 }
 
 .current-thread {
   font-size: 1.5em;
   font-weight: 700;
-  color: hsla(200, 30%, 65%, 1);
+  color: hsla(205, 30%, 65%, 1);
 }
 
 .App-link {
@@ -66,8 +66,8 @@
 .App-footer {
   margin-top: 1em;
   padding: 2.5em;
-  background-color: hsla(200, 30%, 10%, 1);
-  border-top: 1px solid hsla(200, 30%, 50%, 0.5);
+  background-color: hsla(205, 30%, 10%, 1);
+  border-top: 1px solid hsla(205, 30%, 50%, 0.5);
 }
 
 /* ----- 1024 width QUERY ----- */
@@ -76,14 +76,6 @@
   .App-title {
     font-size: 2.2em;
   }
-}
-
-/* ----- TABLET QUERY ----- */
-
-@media only screen and (max-width: 768px) {
-  .App {
-    font-size: 14px;
-  }
 
   .App-header, .App-body {
     grid-template-columns: 1fr 3fr;
@@ -91,6 +83,14 @@
 
   .current-thread {
     display: none;
+  }
+}
+
+/* ----- TABLET QUERY ----- */
+
+@media only screen and (max-width: 768px) {
+  .App {
+    font-size: 14px;
   }
 }
 

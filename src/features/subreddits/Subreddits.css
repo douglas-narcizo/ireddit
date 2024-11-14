@@ -2,11 +2,11 @@
     position: sticky;
     top: calc(10vh + 1em);
     padding: 1em;
-    border: 1px solid hsla(200, 30%, 50%, 0.5);
+    border: 1px solid hsla(205, 30%, 50%, 0.5);
     border-radius: 0.5em;
     height: 83vh;
     overflow: scroll;
-    background-color: hsla(200, 30%, 12%, 1);
+    background-color: hsla(205, 30%, 12%, 1);
 }
 
 .subredd-list h3 {
@@ -23,21 +23,21 @@
     align-items: center;
     margin: 0.4em 0;
     padding: 0.9em 1.25em 0.9em 0.8em;
-    border: 1px solid hsla(200, 30%, 50%, 0.5);
+    border: 1px solid hsla(205, 30%, 50%, 0.5);
     border-radius: 0.25em;
     overflow: hidden;
-    color: hsla(200, 30%, 85%, 1);
-    background-color: hsla(200, 30%, 15%, 1);
+    color: hsla(205, 30%, 85%, 1);
+    background-color: hsla(205, 30%, 15%, 1);
     position: relative;
     transition: all 0.2s ease-in-out;
 }
 
 .subredd-item:hover {
     background-color: hsla(60, 60%, 70%, 0.25);
-    border: 1px solid hsla(200, 30%, 75%, 1);
+    border: 1px solid hsla(205, 30%, 75%, 1);
     cursor: pointer;
-    color: hsla(200, 30%, 100%, 1);
-    box-shadow: hsla(200, 30%, 50%, 1) -2px 2px 3px;
+    color: hsla(205, 30%, 100%, 1);
+    box-shadow: hsla(205, 30%, 50%, 1) -2px 2px 3px;
     translate: 1px -1px;
 }
 
